@@ -1,6 +1,6 @@
-import { clearInput, getIntValueFromInputById } from "../dom/input";
-import { isPrime } from "../math";
-import Action from "./Action";
+import { clearInput, getIntValueFromInputById } from "@/lib/dom/input";
+import { isPrime } from "@/lib/math";
+import Action from "@/lib/actions/Action";
 
 export default class IsPrimeAction extends Action {
   private _htmlId: string;

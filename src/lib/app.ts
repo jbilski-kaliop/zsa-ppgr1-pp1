@@ -1,6 +1,6 @@
-import type Action from "./actions/Action";
-import GcdAction from "./actions/GcdAction";
-import IsPrimeAction from "./actions/IsPrimeAction";
+import type Action from "@/lib/actions/Action";
+import GcdAction from "@/lib/actions/GcdAction";
+import IsPrimeAction from "@/lib/actions/IsPrimeAction";
 
 export default class App {
   static readonly INPUT_EL_1 = "val1";

@@ -1,6 +1,6 @@
-import { clearInput, getIntValueFromInputById } from "../dom/input";
-import { gcd } from "../math";
-import Action from "./Action";
+import { clearInput, getIntValueFromInputById } from "@/lib/dom/input";
+import { gcd } from "@/lib/math";
+import Action from "@/lib/actions/Action";
 
 export default class GcdAction extends Action {
   private _htmlId1: string;
