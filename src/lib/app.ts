@@ -4,6 +4,8 @@ import { gcd, isPrime } from './math';
 const INPUT_EL_1 = 'val1';
 const INPUT_EL_2 = 'val2';
 const ACTION_GCD_EL = 'calculateGcd';
+const ACTION_IS_PRIME_1_EL = 'checkIfPrime1';
+const ACTION_IS_PRIME_2_EL = 'checkIfPrime2';
 
 export default function(): void {
     const calculateGcd = document.getElementById(ACTION_GCD_EL) as HTMLButtonElement;
@@ -23,5 +25,25 @@ export default function(): void {
         console.log(`We've found GCD for values [${val1}, ${val2}]: ${gcdValue}!`);
         
         clearInput(INPUT_EL_1, INPUT_EL_2);
+    });
+
+    _handleIsPrimeActionOnValue(ACTION_IS_PRIME_1_EL, INPUT_EL_1);
+    _handleIsPrimeActionOnValue(ACTION_IS_PRIME_2_EL, INPUT_EL_2);
+}
+
+function _handleIsPrimeActionOnValue(actionElId: string, inputElId: string) {
+    const actionEl = document.getElementById(actionElId) as HTMLButtonElement;
+    actionEl?.addEventListener('click', () => {
+        const value = getIntValueFromInputById(inputElId);
+        if (isNaN(value)) {
+            console.error(`Provided value "${value}" is invalid.`);
+            return;
+        }
+
+        const result = isPrime(value);
+
+        console.log(`Value "${value}" is${result ? '' : ' not'} prime`);
+
+        clearInput(inputElId);
     });
 }
