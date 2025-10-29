@@ -1,3 +1,4 @@
-import runApp from './lib/app';
+import App from './lib/app';
 
-runApp();
+const app = new App();
+app.run();
